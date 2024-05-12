@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>To do list</title>
+</head>
+<body>
+    <ul> TO DO LIST
+        <li class="i">dbms</li>
+        <li class="i">aiml</li>
+        <li class="i">django</li>
+        <li class="i">cloud</li>
+    </ul>
+      <!-- on change -->
+      <p>Select a place to study</p>
+      <select id="mySelect" onchange="myFunction()">
+        <option value="Library">Library</option>
+        <option value="SMV52">SMV52</option>
+        <option value="LAB">LAB</option>
+        <option value="Home">Home</option>
+      </select>
+      <p id="demo"></p>
+  
+  
+      <!-- on click -->
+      <button onclick="myFunction2()">Click me</button>
+      <p id="demo2"></p>
+  
+      <!-- on mouse over & out -->
+      <h3 id="demo3" onmouseover="mouseOver()" onmouseout="mouseOut()">Keep going, Manya!</h3>
+  
+      <!-- on key down -->
+      <p>Press a key in the input field:</p>
+      <input type="text" onkeydown="myFunction3(this)">
+  
+  
+    <script>
+    var firstTodoItem = document.querySelectorAll('.i');
+    for(var i=0;i<firstTodoItem.length;i++){
+    firstTodoItem[i].addEventListener('mouseover', function(){
+        this.style.background = 'red';
+        this.style.color = 'white';
+    });
+    firstTodoItem[i].addEventListener('mouseout', function(){
+        this.style.background = 'white';
+        this.style.color = 'black';
+    });
+    function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+      }
+
+
+      function myFunction2() {
+        document.getElementById("demo2").innerHTML = "You can do itt!";
+      }
+
+
+      function mouseOver() {
+        document.getElementById("demo3").style.color = "#7469B6";
+      }
+      function mouseOut() {
+        document.getElementById("demo3").style.color = "purple";
+      }
+
+      function myFunction3(element) {
+        element.style.backgroundColor = "pink";
+      }
+
+}
+
+   </script>
+     
+     
+</body>
+</html>
